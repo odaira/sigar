@@ -323,6 +323,8 @@
       <compiler name="gcc" debug="${jni.debug}" if="linux">
         <compilerarg value="-O2" if="jni.optim"/>
         <compilerarg value="-g" if="jni.debug"/>
+	<!-- -std=gnu89 required to retain the inline behavior in gcc 5 or later -->
+        <compilerarg value="-std=gnu89"/>
         <compilerarg value="-Wall"/>
         <compilerarg value="-Werror" if="jni.werror"/>
         <compilerarg value="${jni.gccm}" if="jni.gccm"/>
